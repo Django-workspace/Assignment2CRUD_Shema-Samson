@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <title>Retreive from Database</title>
+    <form>
+        <table border="1">
+            <tr>
+                <th>Trainee Id</th>
+                <th>First_Name</th>
+                <th>Last_Name</th>
+                <th>Registration Date</th>
+            </tr>
+            {% for getdata in retrievedata %}
+            <tr>
+                <td>{{getdata.id}}</td>
+                <td>{{getdata.fname}}</td>
+                <td>{{getdata.lname}}</td>
+                <td>{{getdata.regDate}}</td>
+                <td><a href="/delete/{{getdata.id}}" onclick="return confirm('are you sure you want to delete the record {{getdata.fname}}?')">Delete</a></td>
+                <td><a href="/edit/{{getdata.id}}" >Edit</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button><a href="{% url 'save' %}">Back</a></button>
+    </form>
+    </body>
+</html>

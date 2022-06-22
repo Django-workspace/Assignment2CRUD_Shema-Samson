@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <title>Edit Trainee Details</title>
+    <form method="POST" action="/update/{{retrievedata.id}}">
+        {% csrf_token %}
+        <table border="1">
+            <tr>
+                <th>Trainee Id</th>
+                <th>First_Name</th>
+                <th>Last_Name</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="id" value="{{retrievedata.id}}" readonly></td>
+                <td><input type="text"  name="fname" value="{{retrievedata.fname}}"></td>
+                <td><input type="text"  name="lname" value="{{retrievedata.lname}}"></td>
+            </tr>
+        </table>
+        <input type="submit" value="update"/>
+        <button><a href="{% url 'save' %}">Back</a></button>
+    </form>
+    </body>
+</html>

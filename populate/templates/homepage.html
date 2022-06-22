@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<title>Populate</title>
+<h2>Insert And Retrieve Data from Database</h2>
+
+<form method="POST">
+    {% csrf_token %}
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname" placeholder="enter your first name" required><br>
+  <br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname" placeholder="Enter your last name" required><br><br>
+  <input type="submit" value="Submit"> <button><a href="/retrieve">Retrieve</a></button>
+</form>
+
+
+</body>
+</html>
+
